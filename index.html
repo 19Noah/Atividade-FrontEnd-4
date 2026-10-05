@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMotors - Venda de Carros</title>
+    <!-- Tailwind CSS com suporte a Dark Mode via classe -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 min-h-screen">
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="p-5 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold text-red-600">AutoMotors</h1>
+        
+        <!-- Botão Dark Mode -->
+        <button id="themeToggle" class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold hover:opacity-80 transition">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto text-center py-12 px-4">
+        <h2 class="text-4xl font-extrabold mb-4">Encontre o Carro dos Seus Sonhos</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            As melhores ofertas em veículos seminovos e zero quilómetro com garantia e financiamento facilitado.
+        </p>
+    </section>
+
+    <!-- Catálogo de Carros -->
+    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4 pb-16">
+        
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Carro Desportivo" class="w-full h-48 object-cover">
+            <div class="p-5">
+                <h3 class="text-xl font-bold mb-2">Porsche 911 GT3</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Ano 2023 • 5.000 km • Automático</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-bold text-red-600">R$ 1.200.000</span>
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Tenho Interesse</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition">
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Chevrolet Corvette" class="w-full h-48 object-cover">
+            <div class="p-5">
+                <h3 class="text-xl font-bold mb-2">Chevrolet Corvette C8</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Ano 2022 • 12.000 km • Automático</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-bold text-red-600">R$ 850.000</span>
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Tenho Interesse</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="BMW M4" class="w-full h-48 object-cover">
+            <div class="p-5">
+                <h3 class="text-xl font-bold mb-2">BMW M4 Competition</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Ano 2024 • 0 km • Automático</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-bold text-red-600">R$ 980.000</span>
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition">Tenho Interesse</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica do Dark Mode -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                themeToggleBtn.innerHTML = '🌙 Dark Mode';
+            } else {
+                htmlElement.classList.add('dark');
+                themeToggleBtn.innerHTML = '☀️ Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>
